@@ -57,6 +57,16 @@ public class LiquibaseInstallation extends ToolInstallation implements NodeSpeci
         }
         return resolvedHome;
     }
+    
+    public String getPath(){
+        String path = super.getPath();
+        if(StringUtils.isNotEmpty(path){
+            path = path + File.pathSeparator();
+        }
+        path = path + getHome()+"/bin";
+        return path;
+    }
+        
 
 
     public File getLiquibaseJar() {
